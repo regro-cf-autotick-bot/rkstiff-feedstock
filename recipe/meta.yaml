@@ -1,22 +1,22 @@
 {% set name = "rkstiff" %}
-{% set version = "0.0.4" %}
+{% set version = "0.1.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 6fd3ecf8c65c73365acf04001c11712154eb5434eef21219b9595f8b383d4546
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: b00978be213c0f31d68f98b9fef88d71e0b4b788c0c3c227bb5df049fd9204f8
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.6 
+    - python >=3.6
     - pip
   run:
     - python >=3.6
@@ -38,7 +38,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: "Runge-Kutta adaptive-step solvers for nonlinear PDEs"
+  summary: Runge-Kutta adaptive-step solvers for nonlinear PDEs
   description: |
     Adaptive-step Runge-Kutta integrating-factor and 
     exponential time-differencing solvers for nonlinear PDES 
